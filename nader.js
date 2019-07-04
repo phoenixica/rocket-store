@@ -1,5 +1,5 @@
 let a = 'Nader is typing here';
 let b = 'Updating Nader';
-Console.log(a+' '+b);
+Console.log(a+' And he is '+b);
 
 
