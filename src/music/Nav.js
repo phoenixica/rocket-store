@@ -1,15 +1,25 @@
 import React from 'react'
-
 import Product from './Product';
 import Products from './Products';
 import { Link, Route } from 'react-router-dom';
+import axios from 'axios';
+
+const LFAPI_KEY='5fbde430b114ee63de9bbea86b2bf8cb';
 
 export default class Nav extends React.Component {
 
   state={
-    album:{
-      title:'Cher',
-      artist:'Cher'
+    album:
+      {
+        title:'',
+        artist:''
+      },
+      selected: {
+        name:'',
+        artist:'',
+        url:'',
+        image:'',
+        tracks:[]
     }
   }
   handleChange = (event) => {
@@ -28,28 +38,62 @@ export default class Nav extends React.Component {
       }
 
   handleSubmit = (event) => { 
+    event.preventDefault()
     
+    
+    axios({
+      url:`http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${LFAPI_KEY}&artist=${this.state.album.artist}&album=${this.state.album.title}&format=json`,
+      method: 'get',
+  })
+  .then((response) => {
+      // console.log(this.props.name);
+      console.log(response)
+      this.setState({
+        selected: {
+          name:response.data.album.name,
+          artist:response.data.album.artist,
+          url:response.data.album.url,
+          image:response.data.album.image[3]['#text'],
+          tracks:response.data.album.tracks.track.map(
+              track => track.name
+          )
+        },
+        album: {
+          title:'',
+          artist:''
+        },
+      })
+      
+      }) 
   }
 
   render(){
     
     return(
         <div>
-          <form onSubmit={this.handleSubmit}>
-            Album: 
-            <input name="title" 
-                value={this.state.album.title}
-                onChange={this.handleChange}></input>
-            Artist: 
-            <input name="artist" 
-                value={this.state.album.artist}
-                onChange={this.handleChange}></input>
-            <button type="submit"><Link to='/album'>Search Result</Link></button>
-          </form>
-          <Route exact path='/album' 
-          render={() => <Product title={this.state.album.title} artist={this.state.album.artist}/>}
+          <Route exact path='/' render={() => {
+            return (
+              <div>
+                <form onSubmit={this.handleSubmit}>
+                  Album: 
+                  <input name="title" 
+                      value={this.state.album.title}
+                      onChange={this.handleChange}></input>
+                  Artist: 
+                  <input name="artist" 
+                      value={this.state.album.artist}
+                      onChange={this.handleChange}></input>
+                  <button type="submit">
+                    Search Result
+                  </button>
+                </form>
+                <button><Link to='/albums'>All Albums</Link></button>
+                  
+                <Product name={this.state.selected.name} artist={this.state.selected.artist} url={this.state.selected.url} image={this.state.selected.image} tracks={this.state.selected.tracks}/>
+              </div>
+            )}}
           />
-          <Route exact path='/music' component={Products}/>
+          <Route exact path='/albums' component={Products}/>
         </div>
     )
   }

@@ -1,18 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import List from './List';
-
+import { Link } from 'react-router-dom';
 const LFAPI_KEY='5fbde430b114ee63de9bbea86b2bf8cb';
 
 export default class Product extends React.Component 
  {
       state={
         album:[],
-        search:'f'
+        search:'a'
       }
   componentDidMount() {
       axios({
-        // url: `${'https://cors-anywhere.herokuapp.com/'}http://api.onemusicapi.com/20151208/disc?freeDbDiscId=4f06d108&track.1.offset=150&track.2.offset=16541&track.3.offset=30314&track.4.offset=46236&track.5.offset=62800&track.6.offset=79492&track.7.offset=95384&track.8.offset=112719&track.leadout.offset=131099&inc=images&maxResultCount=20&aggregated=first`,
         url:`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.search}&api_key=${LFAPI_KEY}&format=json`,
         method: 'get',
       })
@@ -40,7 +39,7 @@ export default class Product extends React.Component
 
         return (
               <div className="App">
-                <header>Record Store</header>
+                <header>Record Store <button><Link to='/'>Search Albums</Link></button></header>
                 <ul>
                 {albums}
                 </ul>
