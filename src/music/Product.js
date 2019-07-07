@@ -1,5 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
 import firebase from "../firebaseConfig";
+=======
+>>>>>>> add danya branch
 
 export default class Product extends React.Component {
 

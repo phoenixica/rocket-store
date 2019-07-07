@@ -6,10 +6,17 @@ const LFAPI_KEY='5fbde430b114ee63de9bbea86b2bf8cb';
 
 export default class Product extends React.Component 
 {
+<<<<<<< HEAD
     state={
       album:[],
       search:'d'
     }
+=======
+      state={
+        album:[],
+        search:'a'
+      };
+>>>>>>> add danya branch
   componentDidMount() {
       axios({
         url:`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.search}&api_key=${LFAPI_KEY}&format=json`,

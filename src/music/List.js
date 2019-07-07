@@ -1,17 +1,5 @@
 import React from 'react'
-<<<<<<< HEAD
 import firebase from '../firebaseConfig'
-=======
-import { Link, Route } from 'react-router-dom';
-import Product from './Product';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, CardLink
-} from 'reactstrap';
-import { Slide } from 'react-slideshow-image';
-
-
->>>>>>> commit
 
 export default class List extends React.Component {
 
