@@ -1,9 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-// import { thisExpression } from '@babel/types'
-
 export default class Product extends React.Component {
-
 render(){
     return(
         <div>
