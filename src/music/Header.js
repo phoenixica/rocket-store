@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import Nav from './Nav';
 import About from './About';
 import Products from './Products';
-// import Seller from './Seller';
+import Seller from './Seller';
 import Home from './Home';
 import Cart from '../Cart';
 import { Link , Route} from 'react-router-dom';
@@ -18,12 +18,14 @@ return (
             <li><Link to='/search'>Search Albums</Link></li>
             <li><Link to='/albums'>All Albums</Link></li>
             <li><Link to='/about'>About</Link></li>
-           {/* // <li><Link to='/sell'>Sell Your Album</Link></li> */}
+            <li><Link to='/sell'>Sell Your Album</Link></li>
+            <li><Link to='/cart'>Cart</Link></li>
         </ul>
         <Route exact path='/' component={Home}/>
         <Route exact path='/about' component={About}/>
         <Route exact path='/albums' component={Products}/>
-        {/* <Route exact path='/sell' component={Seller}/> */}
+        <Route exact path='/sell' component={Seller}/>
+        <Route exact path='/cart' component={Cart}/>
         <Nav />
     </div>
 );
