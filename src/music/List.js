@@ -9,6 +9,10 @@ export default class List extends React.Component {
         user: ''
     });
 
+    isAdded = () => {
+        alert('"'+this.props.name +'" is added to your cart');
+    };
+
     handleSubmit = (event) => {
 
             event.preventDefault();
@@ -19,6 +23,8 @@ export default class List extends React.Component {
                 const arr = firebase.database().ref('TeamRocketDB');
                 const item = {
                     title: this.props.name,
+                    image: this.props.image,
+                    artist: this.props.artist
                     // Same here whether assigning the user name or email if not provided
                     // user: this.state.user
                 };
@@ -30,6 +36,9 @@ export default class List extends React.Component {
                     user: ''
                 })
          //   }
+
+        setTimeout(this.isAdded , 500);
+
 
     };
 
@@ -51,10 +60,11 @@ export default class List extends React.Component {
                   {this.state.allAlbums.map(s =>
                       <li key={s.id}>
                           {s.title}:
-                          <br/>Added by user is: {s.user}
 
                           <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
-                      </li>)}
+                      </li>
+
+                  )}
               </ul>
           </div>
         </li>

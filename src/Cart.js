@@ -9,29 +9,6 @@ class Cart extends Component {
         user: ''
     });
 
-    handleChange = (event) => {
-
-        this.setState({
-            [event.target.name]: event.target.value
-
-        });
-    };
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const arr = firebase.database().ref('TeamRocketDB');
-        const item = {
-            title: this.state.addAlbum,
-            // Same here whether assigning the user name or email if not provided
-            user: this.state.user
-
-        };
-        arr.push(item);
-
-        this.setState({
-            addAlbum: '',
-            userName: ''
-        })
-    };
     removeAlbum = (id) => {
         const rmv = firebase.database().ref(`/TeamRocketDB/${id}`);
         rmv.remove();
@@ -48,7 +25,8 @@ class Cart extends Component {
                 albums.push({
                     id: content,
                     title: DBAlbum[content].title,
-                    user: DBAlbum[content].user
+                    user: DBAlbum[content].user,
+                    image: DBAlbum[content].image
                 })
             }
             this.setState({
@@ -60,7 +38,7 @@ class Cart extends Component {
     render() {
         return (
             <div>
-                <h1>My Albums</h1>
+                <h1>My Cart</h1>
 
                 {/*<form onSubmit={this.handleSubmit}>*/}
                 {/*    <input type="text" name="user"*/}
@@ -84,9 +62,14 @@ class Cart extends Component {
                     {this.state.allAlbums.map(s =>
                         <li key={s.id}>
                             {s.title}:
-                            <br/>Added by user is: {s.user}
+                            {/*<br/>Added by user is: {s.user}*/}
 
+                            <img src={s.image} alt="Nader is here"/>
+
+                            <p>{s.artist}</p>
                             <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
+
+
                         </li>)}
                 </ul>
             </div>
@@ -94,3 +77,5 @@ class Cart extends Component {
         )
     }
 }
+
+export default Cart
