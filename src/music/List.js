@@ -33,33 +33,26 @@ export default class List extends React.Component {
 
     };
 
-  render(){
+render(){
 
-    return(
-
-        <li>
-          <div >
-              <h4>{this.props.name}</h4>
-              <p>{this.props.artist}</p>
-              <img src={this.props.image} alt=""/>
-
-
-                  <button onClick={this.handleSubmit}>Add to cart</button>
-
-
-              <ul>
-                  {this.state.allAlbums.map(s =>
-                      <li key={s.id}>
-                          {s.title}:
-                          <br/>Added by user is: {s.user}
-
-                          <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
-                      </li>)}
-              </ul>
-          </div>
-        </li>
-  
-    )
-  }
+return(
+<li>
+    <div >
+        <h4>{this.props.name}</h4>
+        <p>{this.props.artist}</p>
+        <img src={this.props.image} alt=""/>
+            <button onClick={this.handleSubmit}>Add to cart</button>
+        <ul>
+            {this.state.allAlbums.map(s =>
+                <li key={s.id}>
+                    {s.title}:
+                    <br/>Added by user is: {s.user}
+                    <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
+                </li>)}
+        </ul>
+    </div>
+</li>
+)
+}
 }
 

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import firebase, {GAuth, auth} from './firebaseConfig';
 
-
-class Cart extends Component {
+export default class Cart extends Component {
     state = ({
         addAlbum: '',
         allAlbums: [],
@@ -10,10 +9,8 @@ class Cart extends Component {
     });
 
     handleChange = (event) => {
-
         this.setState({
             [event.target.name]: event.target.value
-
         });
     };
     handleSubmit = (event) => {
@@ -60,7 +57,7 @@ class Cart extends Component {
     render() {
         return (
             <div>
-                <h1>My Albums</h1>
+                <h1>My Cart</h1>
 
                 {/*<form onSubmit={this.handleSubmit}>*/}
                 {/*    <input type="text" name="user"*/}
@@ -85,7 +82,6 @@ class Cart extends Component {
                         <li key={s.id}>
                             {s.title}:
                             <br/>Added by user is: {s.user}
-
                             <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
                         </li>)}
                 </ul>
