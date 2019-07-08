@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const LFAPI_KEY='5fbde430b114ee63de9bbea86b2bf8cb';
 
 export default class Product extends React.Component 
- {
+{
       state={
         album:[],
         search:'a'
@@ -39,7 +39,9 @@ export default class Product extends React.Component
 
         return (
               <div className="App">
-                <header>Record Store <button><Link to='/'>Search Albums</Link></button></header>
+                <div>
+                  <header>Record Store</header>
+                </div>
                 <ul>
                 {albums}
                 </ul>
