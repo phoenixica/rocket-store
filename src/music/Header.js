@@ -4,7 +4,7 @@ import About from './About';
 import Products from './Products';
 import Seller from './Seller';
 import Home from './Home';
-import Cart from '../Cart';
+import Cart from '../Cart'
 import { Link , Route} from 'react-router-dom';
 
 export default class Header extends Component 
@@ -19,7 +19,7 @@ return (
             <li><Link to='/albums'>All Albums</Link></li>
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/sell'>Sell Your Album</Link></li>
-            <li><Link to='/cart'>Cart</Link></li>
+            <li><Link to='/cart'>View Cart</Link></li>
         </ul>
         <Route exact path='/' component={Home}/>
         <Route exact path='/about' component={About}/>
