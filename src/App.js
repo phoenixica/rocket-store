@@ -1,17 +1,17 @@
 import React,{ Component } from 'react';
-import Nav from './music/Nav';
+import Header from './music/Header';
 
 
 export default class App extends Component 
 {
   render()
-    {
-      return (
-        <div>
-          <Nav />
-        </div>
-      );
-    }
+  {
+    return (
+      <div>
+        <Header />
+      </div>
+    );
+  }
 }
 
 
