@@ -1,4 +1,5 @@
 import React from 'react';
+
 export default class Product extends React.Component {
 render(){
     return(
@@ -14,7 +15,8 @@ render(){
             </a><br /><br />
             <div>
                 <img src={this.props.image} alt=""/><br />
-                <ul>{this.props.tracks.map((track, index)=><li key={index}>{track}</li>)}</ul>
+                <ul>{this.props.tracks.map((track, index)=>
+                    <li key={index}>{track}</li>)}</ul>
             </div>
         </div>
         )

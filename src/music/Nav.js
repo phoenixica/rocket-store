@@ -35,13 +35,14 @@ export default class Nav extends React.Component {
           album: formDataCopy
         })
   }
-  handleSubmit = (event) => { 
+  handleSubmit = (event) => {
+
     event.preventDefault()
     axios({
       url:`http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${LFAPI_KEY}&artist=${this.state.album.artist}&album=${this.state.album.title}&format=json`,
       method: 'get',
   })
-  .then((response) => {
+  .then((response) =>{
     console.log(response)
       if(response.data.album){
         this.setState({
@@ -78,7 +79,7 @@ export default class Nav extends React.Component {
       })
   }
   render(){
-    
+
     return(
       <div>
         <Route exact path='/search' render={() => {
@@ -86,14 +87,14 @@ export default class Nav extends React.Component {
             <div>
               <div>
               <form onSubmit={this.handleSubmit}>
-                Album: 
-                <input name="title" 
+                Album:
+                <input name="title"
                     value={this.state.album.title}
-                    onChange={this.handleChange}></input>
-                Artist: 
-                <input name="artist" 
+                    onChange={this.handleChange}/>
+                Artist:
+                <input name="artist"
                     value={this.state.album.artist}
-                    onChange={this.handleChange}></input>
+                    onChange={this.handleChange}/>
                 <button type="submit">
                   Search Result
                 </button>
@@ -107,4 +108,4 @@ export default class Nav extends React.Component {
     )
   }
 }
-  
+
