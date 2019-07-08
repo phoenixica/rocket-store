@@ -26,7 +26,8 @@ class Cart extends Component {
                     id: content,
                     title: DBAlbum[content].title,
                     user: DBAlbum[content].user,
-                    image: DBAlbum[content].image
+                    image: DBAlbum[content].image,
+                    artist: DBAlbum[content].artist
                 })
             }
             this.setState({
@@ -45,12 +46,10 @@ class Cart extends Component {
                         <li key={s.id}>
                             {s.title}:
                             {/*<br/>Added by user is: {s.user}*/}
-
-                            <img src={s.image} alt="Nader is here"/>
-
                             <p>{s.artist}</p>
+                            <img src={s.image} alt="Nader is here"/>
                             <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
-
+                            <hr/>
 
                         </li>)}
                 </ul>

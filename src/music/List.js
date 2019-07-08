@@ -6,7 +6,8 @@ export default class List extends React.Component {
     state = ({
         //addAlbum: '',
         allAlbums: [],
-        user: ''
+        user: '',
+        showButton: true
     });
 
     isAdded = () => {
@@ -16,28 +17,23 @@ export default class List extends React.Component {
     handleSubmit = (event) => {
 
             event.preventDefault();
-            //if(this.state.user == ''){
-                       // alert("Login please (:")
-            //}else {
-                //  console.log(this.props.name);
+               // console.log(this.props.artist);
                 const arr = firebase.database().ref('TeamRocketDB');
                 const item = {
                     title: this.props.name,
                     image: this.props.image,
                     artist: this.props.artist
-                    // Same here whether assigning the user name or email if not provided
-                    // user: this.state.user
                 };
 
                 arr.push(item);
 
                 this.setState({
                     addAlbum: '',
-                    user: ''
-                })
-         //   }
+                    user: '',
+                });
 
-        setTimeout(this.isAdded , 500);
+                this.refs.btn.setAttribute('disabled' , 'disabled');
+                setTimeout(this.isAdded , 345);
 
 
     };
@@ -51,21 +47,14 @@ export default class List extends React.Component {
               <h4>{this.props.name}</h4>
               <p>{this.props.artist}</p>
               <img src={this.props.image} alt=""/>
+              {
+                  this.state.showButton ?
 
+                  <button ref="btn" onClick={this.handleSubmit}>Add to cart</button>
+                  :
+                      <p>Added to Cart</p>
+              }
 
-                  <button onClick={this.handleSubmit}>Add to cart</button>
-
-
-              <ul>
-                  {this.state.allAlbums.map(s =>
-                      <li key={s.id}>
-                          {s.title}:
-
-                          <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
-                      </li>
-
-                  )}
-              </ul>
           </div>
         </li>
   
