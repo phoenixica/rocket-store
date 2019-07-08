@@ -10,7 +10,7 @@ export default class Product extends React.Component
       state={
         album:[],
         search:'a'
-      }
+      };
   componentDidMount() {
       axios({
         url:`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.search}&api_key=${LFAPI_KEY}&format=json`,
@@ -32,11 +32,12 @@ export default class Product extends React.Component
       const albums = this.state.album.map((album,index) =>
               <List 
                 key={index}
+                id={index}
                 name={album.name}
                 artist={album.artist}
                 image={album.image[3]['#text']}
               />
-            )
+            );
 
         return (
               <div className="App">

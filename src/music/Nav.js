@@ -38,7 +38,7 @@ export default class Nav extends React.Component {
       }
 
   handleSubmit = (event) => { 
-    event.preventDefault()
+    event.preventDefault();
     
     
     axios({
@@ -47,14 +47,14 @@ export default class Nav extends React.Component {
   })
   .then((response) => {
       // console.log(this.props.name);
-      console.log(response)
+      //console.log(response)
       this.setState({
         selected: {
-          name:response.data.album.name,
-          artist:response.data.album.artist,
-          url:response.data.album.url,
-          image:response.data.album.image[3]['#text'],
-          tracks:response.data.album.tracks.track.map(
+          name: response.data.album.name,
+          artist: response.data.album.artist,
+          url: response.data.album.url,
+          image: response.data.album.image[3]['#text'],
+          tracks: response.data.album.tracks.track.map(
               track => track.name
           )
         },
@@ -65,12 +65,16 @@ export default class Nav extends React.Component {
       })
       
       }) 
-  }
+  };
 
   render(){
     
     return(
         <div>
+
+            <header>
+                <button onClick={this.login}>Google Login</button>
+            </header>
           <Route exact path='/' render={() => {
             return (
               <div>
@@ -78,11 +82,11 @@ export default class Nav extends React.Component {
                   Album: 
                   <input name="title" 
                       value={this.state.album.title}
-                      onChange={this.handleChange}></input>
+                      onChange={this.handleChange} />
                   Artist: 
                   <input name="artist" 
                       value={this.state.album.artist}
-                      onChange={this.handleChange}></input>
+                      onChange={this.handleChange} />
                   <button type="submit">
                     Search Result
                   </button>
