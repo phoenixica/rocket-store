@@ -38,7 +38,7 @@ export default class List extends React.Component {
     return(
 
         <li>
-          <div >
+          <div>
               <h4>{this.props.name}</h4>
               <p>{this.props.artist}</p>
               <img src={this.props.image} alt=""/>
