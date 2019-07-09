@@ -19,6 +19,7 @@ export default class Seller extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showClick = this.showClick.bind(this);
+        // this.deleteClick = this.deleteClick.bind(this); Delete by key
       }
 
       handleChange(event) {
@@ -29,25 +30,37 @@ export default class Seller extends React.Component {
       }
 
       handleSubmit(event) {
-        console.log('A name was submitted: ' + this.state.album + this.state.artist );
-        event.preventDefault();
-        var db = firebase.firestore();
-        db.collection("danyah1").add({
-            album:this.state.album,
-            artist:this.state.artist,
-            image:this.state.image
-        })
-        .then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch(function(error) {
-            console.error("Error adding document: ", error);
-        });
-        this.setState({
-          album: '',
-          artist:'',
-          image:'',
-        })
+        if(this.state.album && this.state.artist && this.state.image)
+        {
+            console.log('A name was submitted: ' + this.state.album + this.state.artist );
+            event.preventDefault();
+            var db = firebase.firestore();
+            db.collection("danyah1").add({
+                album:this.state.album,
+                artist:this.state.artist,
+                image:this.state.image
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            });
+            this.setState({
+              album: '',
+              artist:'',
+              image:'',
+            })
+        }
+        else
+        {
+          this.setState({
+            album: '',
+            artist:'',
+            image:'',
+          })
+          console.log("WHAT THE HELL")
+        }
       }
 
       showClick(event){
@@ -55,18 +68,30 @@ export default class Seller extends React.Component {
         event.preventDefault();
         db.get().then((querySnapshot) => {
           querySnapshot.forEach(doc =>  {
+              // console.log(doc.id, '=>', doc.data())
               arr.push(doc.data())
               this.setState({
-              display:arr,
-              clicked:false
+              display:arr
               })
             }
-
           )
           console.log("state:")
           console.log(this.state.display)
         })
+        this.setState({
+          clicked:!this.state.clicked})
       }
+
+
+      // deleteClick(event){ Delete by key
+      //   event.preventDefault();
+      //   db.doc("3XHIa1BCBOQ8YGSOqkLB").delete().then(function() {
+      //         console.log("Document successfully deleted!");
+      //     }).catch(function(error) {
+      //         console.error("Error removing document: ", error);
+      //     });
+      // }
+
 
     render() {
       
@@ -109,9 +134,22 @@ export default class Seller extends React.Component {
       
       <br /><br />
       <div className="row">
-      <button type="button" className="btn btn-secondary btn-lg btn-block" onClick={this.showClick}>User Albums</button>
+      <button 
+      type="button" 
+      className="btn btn-secondary btn-lg btn-block" 
+      onClick={this.showClick}>
+        User Albums
+        </button>
       </div>
       <br /><br />
+
+      {/* <br /><br />
+      Delete by key
+      <div className="row">
+      <button type="button" className="btn btn-danger btn-lg btn-block" onClick={this.deleteClick}>Delete</button>
+      </div>
+      <br /><br /> */}
+      
       <div className="container">
           <div className="row">
           {

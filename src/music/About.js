@@ -8,11 +8,13 @@ render(){
     return(
         <div className="container">
         <div className="jumbotron">
-            <h1 className="display-4">Hello, world!</h1>
-            <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <h1 className="display-4">Rocket Store</h1>
+            <p className="lead">This is an online store to sell music online 
+            we sell both hard cover albums by famous musicians and online music. You can also upload and album 
+            for us to promote</p>
             <hr className="my-4" />
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a className="btn btn-primary btn-lg" href="https://github.com/phoenixica/rocket-store" role="button">Learn more</a>
+            <p>This website is made with great passion by team rocket </p>
+            <a className="btn btn-primary btn-lg" href="https://github.com/phoenixica/rocket-store" role="button">our github account</a>
         </div>
         </div>
         )
