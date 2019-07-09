@@ -6,7 +6,7 @@ export default class Product extends React.Component {
     state = ({
         //addAlbum: '',
         allAlbums: [],
-        user: '',
+        user: ''
     });
 
     isAdded = () => {
