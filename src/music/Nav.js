@@ -43,7 +43,7 @@ export default class Nav extends React.Component {
       method: 'get',
   })
   .then((response) =>{
-    console.log(response)
+    //console.log(response)
       if(response.data.album){
         this.setState({
           selected: {

@@ -6,8 +6,7 @@ export default class List extends React.Component {
     state = ({
         //addAlbum: '',
         allAlbums: [],
-        user: '',
-        showButton: true
+        user: ''
     });
 
     isAdded = () => {
@@ -47,14 +46,7 @@ export default class List extends React.Component {
               <h4>{this.props.name}</h4>
               <p>{this.props.artist}</p>
               <img src={this.props.image} alt=""/>
-              {
-                  this.state.showButton ?
-
-                  <button ref="btn" onClick={this.handleSubmit}>Add to cart</button>
-                  :
-                      <p>Added to Cart</p>
-              }
-
+              <button ref="btn" onClick={this.handleSubmit}>Add to cart</button>
           </div>
         </li>
   
