@@ -44,11 +44,7 @@ export default class Nav extends React.Component {
       method: 'get',
   })
   .then((response) =>{
-<<<<<<< HEAD
     //console.log(response)
-=======
-    console.log(response)
->>>>>>> add danya branch
       if(response.data.album){
         this.setState({
           selected: {
