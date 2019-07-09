@@ -46,18 +46,7 @@ export default class List extends React.Component {
               <h4>{this.props.name}</h4>
               <p>{this.props.artist}</p>
               <img src={this.props.image} alt=""/>
-<<<<<<< HEAD
               <button ref="btn" onClick={this.handleSubmit}>Add to cart</button>
-=======
-              {
-                  this.state.showButton ?
-
-                  <button ref="btn" onClick={this.handleSubmit}>Add to cart</button>
-                  :
-                      <p>Added to Cart</p>
-              }
-
->>>>>>> add some files
           </div>
         </li>
   

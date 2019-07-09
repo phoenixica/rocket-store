@@ -51,7 +51,6 @@ export default class Product extends React.Component {
             <div>
                 <img src={this.props.image} alt=""/><br />
                 <ul>{this.props.tracks.map((track, index)=>
-<<<<<<< HEAD
                     <li key={index}
                     id={index}>{track}</li>)}
 
@@ -62,9 +61,6 @@ export default class Product extends React.Component {
                         <h3>Use the form above to lookup an album</h3>
                     }
                 </ul>
-=======
-                    <li key={index}>{track}</li>)}</ul>
->>>>>>> add some files
             </div>
         </div>
         )
