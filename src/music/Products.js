@@ -30,6 +30,7 @@ export default class Product extends React.Component
     const albums = this.state.album.map((album,index) =>
       <List 
         key={index}
+        id={index}
         name={album.name}
         artist={album.artist}
         image={album.image[3]['#text']}
