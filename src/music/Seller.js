@@ -1,66 +1,68 @@
 import React from 'react';
-import './seller.css'
+import './seller.css';
+import firebase from "../firebaseConfig";
 // import { Link, Route } from 'react-router-dom';
 // import Product from './Product';
 
 export default class Seller extends React.Component {
 
-    state={
-        file: '',
-        imagePreviewUrl: ''
-    }
-    _handleSubmit(e) {
-    e.preventDefault();
-    // TODO: do something with -> this.state.file
-    console.log('handle uploading-', this.state.file);
-    }
-
-    _handleImageChange(e) {
-    e.preventDefault();
-
-    let reader = new FileReader();
-    let file = e.target.files[0];
-
-    reader.onloadend = () => {
+    constructor(props) {
+        super(props);
+        this.state = {
+            album: '',
+            artist:'',
+            image:''
+        };
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+    
+      handleChange(event) {
+        const { name, value } = event.target;
         this.setState({
-        file: file,
-        imagePreviewUrl: reader.result
+            [name]: value
         });
-    }
+      }
+  
+      handleSubmit(event) {
+        console.log('A name was submitted: ' + this.state.album + this.state.artist );
+        event.preventDefault();
+        var db = firebase.firestore();
+        db.collection("danyah1").add({
+            album:this.state.album,
+            artist:this.state.artist,
+            image:this.state.image
+        })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+        console.log(db)
+        
 
-    reader.readAsDataURL(file)
-    }
 
+      }
 
-render(){
-let {imagePreviewUrl} = this.state;
-let $imagePreview = null;
-if (imagePreviewUrl) {
-    $imagePreview = (<img className="imageForum" src={imagePreviewUrl} alt=""/>);
-} else {
-    $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
-}
-
-return (
-        <div className="previewComponent">
-            <form onSubmit={(e)=>this._handleSubmit(e)}>
-                <label>Album Name:</label><br />
-                <input></input><br />
-                <label>Artist Name:</label><br />
-                <input></input><br />
-                <label>Image</label><br />
-                <input className="fileInput" 
-                type="file" 
-                onChange={(e)=>this._handleImageChange(e)} />
-                <br />
-                <div className="imgPreview">
-                    {$imagePreview}
-                </div>
-                <br />
-                <button className="submitButton" 
-                type="submit">Submit Form</button>
-            </form>
-        </div>
+    render() {
+    return (
+        <form onSubmit={this.handleSubmit}>
+        <label>
+          Album:
+          <input type="text" name='album' value={this.state.album} onChange={this.handleChange} />
+        </label><br />
+        <label>
+          Artist:
+          <input type="text" name='artist' value={this.state.artist} onChange={this.handleChange} />
+        </label><br />
+        <label>
+          Cover:
+          <input type="text" name='image' value={this.state.file} onChange={this.handleChange} />
+        </label><br /><br />
+        <input type="submit" value="Submit" />
+      </form>
         )
     }
 }
