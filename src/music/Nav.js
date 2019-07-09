@@ -3,6 +3,7 @@ import Product from './Product';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
 
+
 const LFAPI_KEY='5fbde430b114ee63de9bbea86b2bf8cb';
 
 export default class Nav extends React.Component {
@@ -84,18 +85,22 @@ export default class Nav extends React.Component {
       <div>
         <Route exact path='/search' render={() => {
           return (
-            <div>
-              <div>
+            <div className="container">
+              <div className="form-group">
               <form onSubmit={this.handleSubmit}>
                 Album:
                 <input name="title"
                     value={this.state.album.title}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}
+                    className="form-control"/>
+                    <br />
                 Artist:
                 <input name="artist"
                     value={this.state.album.artist}
-                    onChange={this.handleChange}/>
-                <button type="submit">
+                    onChange={this.handleChange}
+                    className="form-control"/>
+                    <br />
+                <button type="submit" className="btn btn-secondary">
                   Search Result
                 </button>
               </form>

@@ -8,7 +8,7 @@ export default class Product extends React.Component
 {
     state={
       album:[],
-      search:'a'
+      search:'d'
     }
   componentDidMount() {
       axios({
@@ -38,14 +38,11 @@ export default class Product extends React.Component
     )
 
         return (
-              <div className="App">
-                <div>
-                  <header>Record Store</header>
-                </div>
-                <ul>
+          <div className="container">
+            <div className="row">
                 {albums}
-                </ul>
-              </div>
+            </div>
+          </div>
         );
     }
 
