@@ -37,19 +37,17 @@ export default class Product extends React.Component
       />
     )
 
-        return (
-              <div className="App">
-                <div>
-                  <header>Record Store</header>
-                </div>
-                <ul>
-                {albums}
-                </ul>
-              </div>
-        );
-    }
-
-    
+    return (
+      <div className="App">
+        <div>
+          <header>Record Store</header>
+        </div>
+        <ul>
+        {albums}
+        </ul>
+      </div>
+    );
+  }
 }
 
 
