@@ -1,4 +1,5 @@
 import React from 'react'
+import Slideshow from '../slide';
 // import { Link, Route } from 'react-router-dom';
 // import Product from './Product';
 
@@ -8,6 +9,7 @@ render(){
     return(
         <div className="container">
          <h2>Home</h2>
+         <Slideshow />
         </div>
         )
     }

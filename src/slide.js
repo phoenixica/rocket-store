@@ -1,52 +1,52 @@
 import React from 'react';
-import { Slide } from 'react-slideshow-image';
+// import { Slide } from 'react-slideshow-image';
 
-import { Link, Route } from 'react-router-dom';
-import  img1 from './images/img1.png';
-import  img2  from './images/img2.png'
-import  img4 from './images/img4.png'
+// import { Link, Route } from 'react-router-dom';
+import img1 from './images/img1.jpg';
+import img2 from './images/img2.jpg';
+import img3 from './images/img3.jpg';
+import img4 from './images/img4.jpeg';
+// import img33 from './images/img33.jpg';
+// import img6 from './images/img6.jpg';
 
 
 
-import './SlideShow.css';
-
-const slideImages = [
-    './images/img22.jpg',
-    './images/img1.png',
-    './images/img20.png'
-];
-
-const properties = {
-    duration: 5000,
-    transitionDuration: 500,
-    infinite: true,
-    indicators: true,
-    arrows: true,
-    onChange: (oldIndex, newIndex) => {
-        console.log(`slide transition from ${oldIndex} to ${newIndex}`);
-    }
-}
+import './Slide.css'
 
 const Slideshow = () => {
     return (
-        <Slide {...properties}>
-            <div className="each-slide">
-                <div style={{ 'backgroundImage': `url(${img1})` }}>
-                    {/* <img src='images/img22.jpg' alt="#"/> */}
-                    <span><Link to='/albums'>album</Link> </span>
+        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+            <ol className="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div className="carousel-inner">
+                <div className="carousel-item active">
+                    <img src={img1} className="d-block w-100" alt="..." />
                 </div>
-            </div>
-            <div className="each-slide">
-                <div style={{ 'backgroundImage': `url(${img2})` }}>
-                    <span>Slide 2</span>
+                <div className="carousel-item">
+                    <img src={img2} className="d-block w-100" alt="..." />
                 </div>
-            </div>
-            <div className="each-slide">
-                <div style={{ 'backgroundImage': `url(${img4})` }}>
-                    <span>Slide 3</span>
+                <div className="carousel-item">
+                    <img src={img3} className="d-block w-100" alt="..." />
                 </div>
+                <div className="carousel-item">
+                    <img src={img4} className="d-block w-100" alt="..." />
+                </div>
+
             </div>
-        </Slide>
+            <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+            </a>
+            <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+            </a>
+        </div>
+
     )
 }
+
 export default Slideshow;
