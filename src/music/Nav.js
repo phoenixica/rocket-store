@@ -2,7 +2,7 @@ import React from 'react'
 import Product from './Product';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
-
+import './Nav.css';
 const LFAPI_KEY='5fbde430b114ee63de9bbea86b2bf8cb';
 
 export default class Nav extends React.Component {
@@ -86,16 +86,16 @@ export default class Nav extends React.Component {
           return (
             <div>
               <div>
-              <form onSubmit={this.handleSubmit}>
+              <form className="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>
                 Album:
-                <input name="title"
+                <input className="form-control mr-sm-2" placeholder="The Album" name="title"
                     value={this.state.album.title}
                     onChange={this.handleChange}/>
                 Artist:
-                <input name="artist"
+                <input className="form-control mr-sm-2" placeholder="Artist Name"  name="artist"
                     value={this.state.album.artist}
                     onChange={this.handleChange}/>
-                <button type="submit">
+                <button className="btn btn-outline-primary" type="submit">
                   Search Result
                 </button>
               </form>

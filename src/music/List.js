@@ -1,7 +1,10 @@
-import React from 'react'
+// import React from 'react'
 import firebase from '../firebaseConfig'
+import React, { Component } from "react";
+// import { MDBNotification } from "mdbreact";
+// import Notif from './Notif';
 
-export default class List extends React.Component {
+export default class List extends Component {
 
     state = ({
         //addAlbum: '',
@@ -10,7 +13,9 @@ export default class List extends React.Component {
     });
 
     isAdded = () => {
-        alert('"'+this.props.name +'" is added to your cart');
+      
+        alert('"'+this.props.name +'" is added to your album list');
+   
     };
 
     handleSubmit = (event) => {

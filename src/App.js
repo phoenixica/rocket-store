@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import Header from './music/Header';
-
+import './App.css';
 const slideImages = [
     'images/img1.png',
     'images/img2.png.jpg',
