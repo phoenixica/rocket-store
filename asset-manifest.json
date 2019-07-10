@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/phoenixica/rocket-store/static/css/main.dd64390a.chunk.css",
+    "main.js": "/phoenixica/rocket-store/static/js/main.2f6eb788.chunk.js",
+    "main.js.map": "/phoenixica/rocket-store/static/js/main.2f6eb788.chunk.js.map",
+    "runtime~main.js": "/phoenixica/rocket-store/static/js/runtime~main.d9086e24.js",
+    "runtime~main.js.map": "/phoenixica/rocket-store/static/js/runtime~main.d9086e24.js.map",
+    "static/css/2.0624914a.chunk.css": "/phoenixica/rocket-store/static/css/2.0624914a.chunk.css",
+    "static/js/2.a559d485.chunk.js": "/phoenixica/rocket-store/static/js/2.a559d485.chunk.js",
+    "static/js/2.a559d485.chunk.js.map": "/phoenixica/rocket-store/static/js/2.a559d485.chunk.js.map",
+    "index.html": "/phoenixica/rocket-store/index.html",
+    "precache-manifest.72be57a497442f0e990e7f2184bb4370.js": "/phoenixica/rocket-store/precache-manifest.72be57a497442f0e990e7f2184bb4370.js",
+    "service-worker.js": "/phoenixica/rocket-store/service-worker.js",
+    "static/css/2.0624914a.chunk.css.map": "/phoenixica/rocket-store/static/css/2.0624914a.chunk.css.map",
+    "static/css/main.dd64390a.chunk.css.map": "/phoenixica/rocket-store/static/css/main.dd64390a.chunk.css.map",
+    "static/media/img1.jpg": "/phoenixica/rocket-store/static/media/img1.97815300.jpg",
+    "static/media/img2.jpg": "/phoenixica/rocket-store/static/media/img2.ba82651d.jpg",
+    "static/media/img3.jpg": "/phoenixica/rocket-store/static/media/img3.5c49111c.jpg",
+    "static/media/rocket-store.svg": "/phoenixica/rocket-store/static/media/rocket-store.daf5ddbd.svg"
+  }
+}
