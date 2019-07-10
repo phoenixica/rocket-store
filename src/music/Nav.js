@@ -2,7 +2,8 @@ import React from 'react'
 import Product from './Product';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
-import './Nav.css';
+
+
 const LFAPI_KEY='5fbde430b114ee63de9bbea86b2bf8cb';
 
 export default class Nav extends React.Component {
@@ -84,18 +85,22 @@ export default class Nav extends React.Component {
       <div>
         <Route exact path='/search' render={() => {
           return (
-            <div>
-              <div>
-              <form className="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>
+            <div className="container">
+              <div className="form-group">
+              <form onSubmit={this.handleSubmit}>
                 Album:
                 <input className="form-control mr-sm-2" placeholder="The Album" name="title"
                     value={this.state.album.title}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}
+                    className="form-control"/>
+                    <br />
                 Artist:
                 <input className="form-control mr-sm-2" placeholder="Artist Name"  name="artist"
                     value={this.state.album.artist}
-                    onChange={this.handleChange}/>
-                <button className="btn btn-outline-primary" type="submit">
+                    onChange={this.handleChange}
+                    className="form-control"/>
+                    <br />
+                <button type="submit" className="btn btn-secondary  list-group-item-info">
                   Search Result
                 </button>
               </form>

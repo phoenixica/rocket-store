@@ -1,5 +1,7 @@
 import React from 'react';
 import firebase from "../firebaseConfig";
+// // import swal from '@sweetalert/with-react';
+// import SweetAlert from 'sweetalert2-react';
 
 export default class Product extends React.Component {
 
@@ -11,6 +13,17 @@ export default class Product extends React.Component {
 
     isAdded = () => {
         alert('"'+this.props.name +'" is added to your cart');
+// swal({
+//     content: <div>Hello world!</div>,
+//     buttons: true,
+//   });
+
+//     <SweetAlert
+//     show={this.state.show}
+//     title="Demo"
+//     text="SweetAlert in React"
+//     onConfirm={() => this.setState({ show: false })}
+//   />
     };
 
     handleSubmit = (event) => {
@@ -38,8 +51,10 @@ export default class Product extends React.Component {
 
     render(){
     return(
-        <div>
-            <h1>
+        <div className="card">
+             
+            <h1 className="card-title">
+                
                 {this.props.name}
             </h1>
             <h3>
@@ -52,11 +67,11 @@ export default class Product extends React.Component {
                 <img src={this.props.image} alt=""/><br />
                 <ul>{this.props.tracks.map((track, index)=>
                     <li key={index}
-                    id={index}>{track}</li>)}
+                    id={index} className="card-text">{track}</li>)}
 
 
                     { this.props.image ?
-                        <button ref="btn" onClick={this.handleSubmit}>Add to cart</button>
+                        <button  className="btn btn-primary  list-group-item-info"  ref="btn" onClick={this.handleSubmit}>Add to cart</button>
                         :
                         <h3>Use the form above to lookup an album</h3>
                     }
