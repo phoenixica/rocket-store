@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2e4e736772b1d3dcff0879163e605656",
+    "revision": "5efb5c3a848f7946e1732bf63e1aba28",
     "url": "/rocket-store/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rocket-store/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "becb87edec19e43f29fb",
+    "revision": "896c3d389129d7c92b99",
     "url": "/rocket-store/static/css/main.dd64390a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rocket-store/static/js/2.a9d901f6.chunk.js"
   },
   {
-    "revision": "becb87edec19e43f29fb",
-    "url": "/rocket-store/static/js/main.eafd4cc8.chunk.js"
+    "revision": "896c3d389129d7c92b99",
+    "url": "/rocket-store/static/js/main.1e25e7f2.chunk.js"
   },
   {
     "revision": "3f80e72b1062748aee2a",
