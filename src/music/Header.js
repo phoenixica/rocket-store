@@ -46,7 +46,13 @@ return (
             <Link to='/cart'>View Cart</Link>
         </li>
         <li className="nav-item">
-            <Link to='/LoginTest'>My page</Link>
+            {this.state.user ?
+
+                <Link to='/LoginTest'>Logout</Link>
+
+                :
+                <Link to='/LoginTest'>Login</Link>
+            }
         </li>
       </ul>
       </nav> 

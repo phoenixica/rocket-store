@@ -23,12 +23,13 @@ class Cart extends Component {
             let albums = [];
 
             for (let content in DBAlbum) {
-                albums.push({
-                    id: content,
-                    title: DBAlbum[content].title,
-                    user: DBAlbum[content].user,
-                    image: DBAlbum[content].image,
-                    artist: DBAlbum[content].artist
+                if (this.props.user === DBAlbum[content].user)
+                    albums.push({
+                        id: content,
+                        title: DBAlbum[content].title,
+                        user: DBAlbum[content].user,
+                        image: DBAlbum[content].image,
+                        artist: DBAlbum[content].artist
                 })
             }
             this.setState({
@@ -61,7 +62,7 @@ class Cart extends Component {
                 </div>
                     :
                         <div>
-                            <Login />
+                           "Please login to access your cart"
                         </div>
                 }
 

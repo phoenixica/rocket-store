@@ -46,9 +46,9 @@ class Login extends Component {
         return (
             <div className="container">
                 {this.props.user ?
-                    <button onClick={this.logout}>Log Out</button>
+                    <button className="btn btn-secondary btn-lg btn-block"  onClick={this.logout}>Log Out</button>
                     :
-                    <button onClick={this.login}>Log in</button>
+                    <button className="btn btn-secondary btn-lg btn-block" onClick={this.login}>Log in</button>
                 }
 
                 {this.props.user
