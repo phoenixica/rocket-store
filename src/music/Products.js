@@ -8,7 +8,7 @@ export default class Product extends React.Component
 {
     state={
       album:[],
-      search:'a'
+      search:'d'
     }
   componentDidMount() {
       axios({
@@ -33,19 +33,18 @@ export default class Product extends React.Component
         id={index}
         name={album.name}
         artist={album.artist}
-        image={album.image[3]['#text']}
+        user={this.props.user}
+        image={album.image[3]['#text']
+      }
       />
     )
 
         return (
-              <div className="App">
-                <div>
-                  <header>Record Store</header>
-                </div>
-                <ul>
+          <div className="container">
+            <div className="row">
                 {albums}
-                </ul>
-              </div>
+            </div>
+          </div>
         );
     }
 

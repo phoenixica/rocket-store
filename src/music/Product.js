@@ -38,8 +38,8 @@ export default class Product extends React.Component {
 
     render(){
     return(
-        <div>
-            <h1>
+        <div className="card">
+            <h1 className="card-title">
                 {this.props.name}
             </h1>
             <h3>
@@ -52,11 +52,11 @@ export default class Product extends React.Component {
                 <img src={this.props.image} alt=""/><br />
                 <ul>{this.props.tracks.map((track, index)=>
                     <li key={index}
-                    id={index}>{track}</li>)}
+                    id={index} className="card-text">{track}</li>)}
 
 
                     { this.props.image ?
-                        <button ref="btn" onClick={this.handleSubmit}>Add to cart</button>
+                        <button  className="btn btn-primary" ref="btn" onClick={this.handleSubmit}>Add to cart</button>
                         :
                         <h3>Use the form above to lookup an album</h3>
                     }

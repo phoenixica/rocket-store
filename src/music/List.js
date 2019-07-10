@@ -6,7 +6,7 @@ export default class List extends React.Component {
     state = ({
         //addAlbum: '',
         allAlbums: [],
-        user: ''
+        //user: ''
     });
 
     isAdded = () => {
@@ -14,42 +14,56 @@ export default class List extends React.Component {
     };
 
     handleSubmit = (event) => {
+      if (this.props.user)
+      {
 
-            event.preventDefault();
-               // console.log(this.props.artist);
-                const arr = firebase.database().ref('TeamRocketDB');
-                const item = {
-                    title: this.props.name,
-                    image: this.props.image,
-                    artist: this.props.artist
-                };
+          event.preventDefault();
+          // console.log(this.props.artist);
+          const arr = firebase.database().ref('TeamRocketDB');
+          const item = {
+              title: this.props.name,
+              image: this.props.image,
+              artist: this.props.artist,
+              user: this.props.user
+          };
 
-                arr.push(item);
+          arr.push(item);
 
-                this.setState({
-                    addAlbum: '',
-                    user: '',
-                });
+          this.setState({
+              addAlbum: ''
+              //user: '',
+          });
 
-                this.refs.btn.setAttribute('disabled' , 'disabled');
-                setTimeout(this.isAdded , 345);
+          this.refs.btn.setAttribute('disabled' , 'disabled');
+          setTimeout(this.isAdded , 345);
 
 
-    };
+      }
 
+      else {
+          alert('Login to add to cart')
+      }
+
+      };
   render(){
 
     return(
-
-        <li>
-          <div>
-              <h4>{this.props.name}</h4>
+      
+      <div className="col-lg-3">
+        <div className="card">
+          <div className="card-body">
+            <span>
+              {
+                this.props.button ? '' : <button className="badge badge-secondary" ref="btn" onClick={this.handleSubmit}>Add to cart</button>
+              }
+              </span>
+              <h6>{this.props.name} </h6>
               <p>{this.props.artist}</p>
-              <img src={this.props.image} alt=""/>
-              <button ref="btn" onClick={this.handleSubmit}>Add to cart</button>
-          </div>
-        </li>
-  
+              <img src={this.props.image} alt="" className="card-img-top"/>
+            </div>
+        </div>
+       <br/>
+    </div>
     )
   }
 }

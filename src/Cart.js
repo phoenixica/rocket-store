@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import firebase, {GAuth, auth} from './firebaseConfig';
+import Login from './LoginTest'
 
 
 class Cart extends Component {
     state = ({
         addAlbum: '',
         allAlbums: [],
-        user: ''
+        //user: null
     });
 
     removeAlbum = (id) => {
@@ -38,21 +39,32 @@ class Cart extends Component {
 
     render() {
         return (
-            <div>
-
+            <div className="container">
+                {
+                    this.props.user ?
+                <div>
+                <h2>Welcome: {this.props.user}</h2>
+                    {/*<img src={this.props.avatar} alt="nader" width={'55px'}/>*/}
                     <h1>You have {this.state.allAlbums.length} items in your cart</h1>
-                <ul>
+                    <ul>
                     {this.state.allAlbums.map(s =>
-                        <li key={s.id}>
-                            {s.title}:
-                            {/*<br/>Added by user is: {s.user}*/}
-                            <p>{s.artist}</p>
-                            <img src={s.image} alt="Nader is here"/>
-                            <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
-                            <hr/>
+                    <li key={s.id}>
+                    {s.title}:
+                    {/*<br/>Added by user is: {s.user}*/}
+                    <p>{s.artist}</p>
+                    <img src={s.image} alt="Nader is here"/>
+                    <button onClick={() => this.removeAlbum(s.id)}>Delete album</button>
+                    <hr/>
 
-                        </li>)}
-                </ul>
+                    </li>)}
+                    </ul>
+                </div>
+                    :
+                        <div>
+                            <Login />
+                        </div>
+                }
+
             </div>
 
         )
