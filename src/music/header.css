@@ -1,17 +1,24 @@
-nav{
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    border-top: 0;
-}
-li {
-    padding: 15px;
+.fonts {
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: darkcyan;
 }
 
-#logo{
-    width:50px;
-    height:50px;
-    margin-left: 35px
+.cartfonts {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    color: darkcyan;
+    margin-top: 14px;
+}
+
+.albumtitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(107, 94, 34);
+    margin-top: 14px;
+    text-shadow: 50px;
 }

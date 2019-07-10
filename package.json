@@ -6,6 +6,7 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "firebase": "^6.2.4",
+    "gh-pages": "^2.0.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
@@ -49,5 +50,10 @@
   "bugs": {
     "url": "https://github.com/phoenixica/rocket-store/issues"
   },
-  "homepage": "https://github.com/phoenixica/rocket-store#readme"
+  "homepage": "https://github.com/phoenixica/rocket-store#readme",
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  }
 }
