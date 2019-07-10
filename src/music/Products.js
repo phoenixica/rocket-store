@@ -33,7 +33,9 @@ export default class Product extends React.Component
         id={index}
         name={album.name}
         artist={album.artist}
-        image={album.image[3]['#text']}
+        user={this.props.user}
+        image={album.image[3]['#text']
+      }
       />
     )
 
