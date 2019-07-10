@@ -12,7 +12,7 @@ export default class Product extends React.Component
     }
   componentDidMount() {
       axios({
-        url:`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.search}&api_key=${LFAPI_KEY}&format=json`,
+        url:`https://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.search}&api_key=${LFAPI_KEY}&format=json`,
         method: 'get',
       })
       .then((response) => {

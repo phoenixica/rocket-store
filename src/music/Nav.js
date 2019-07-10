@@ -39,7 +39,7 @@ export default class Nav extends React.Component {
 
     event.preventDefault()
     axios({
-      url:`http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${LFAPI_KEY}&artist=${this.state.album.artist}&album=${this.state.album.title}&format=json`,
+      url:`https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${LFAPI_KEY}&artist=${this.state.album.artist}&album=${this.state.album.title}&format=json`,
       method: 'get',
   })
   .then((response) =>{
