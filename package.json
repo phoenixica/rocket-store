@@ -52,5 +52,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/phoenixica/rocket-store/issues"
+  },
+  "devDependencies": {
+    "react-social-icons": "^4.1.0"
   }
 }

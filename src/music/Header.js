@@ -7,8 +7,9 @@ import Home from './Home';
 import Cart from '../Cart';
 import Login from './../LoginTest';
 import { Link , Route} from 'react-router-dom';
-import './header.css'
-import logo from './rocket-store.svg';
+import './header.css';
+import rocart from '../images/rocart-logo.png';
+
 export default class Header extends Component 
 {
     state= {
@@ -24,34 +25,34 @@ render()
 {
 return (
 
-    <div>
-    <nav className="navbar navbar-expand-sm bg-light navbar-fixed-top">
-      <ul className="navbar-nav">
+    <div > 
+    <nav className="navbar navbar-expand-sm bg-light navbar-fixed-top fonts text-danger colory "  >
+      <ul className="navbar-nav text-danger">
         <li className="navbar-brand">
-            <Link to='/'><img src={logo} alt="Store" id='logo'/></Link>
+            <Link to='/'><img src={rocart} alt="Store" id='logo'/></Link>
+        </li>
+        <li className="nav-item text-danger ">
+            <Link to='/albums' className="text-danger ">All Albums</Link>
         </li>
         <li className="nav-item">
-            <Link to='/albums'>All Albums</Link>
+            <Link to='/about' className="text-danger ">About</Link>
         </li>
         <li className="nav-item">
-            <Link to='/about'>About</Link>
+            <Link to='/search'  className="text-danger ">Find Album</Link>
         </li>
         <li className="nav-item">
-            <Link to='/search'>Find Album</Link>
+            <Link to='/sell'  className="text-danger ">Sell Your Album</Link>
         </li>
         <li className="nav-item">
-            <Link to='/sell'>Sell Your Album</Link>
-        </li>
-        <li className="nav-item">
-            <Link to='/cart'>View Cart</Link>
+            <Link to='/cart'  className="text-danger ">View Cart</Link>
         </li>
         <li className="nav-item">
             {this.state.user ?
 
-                <Link to='/LoginTest'>Logout</Link>
+                <Link to='/LoginTest'  className="text-warning ">Logout</Link>
 
                 :
-                <Link to='/LoginTest'>Login</Link>
+                <Link to='/LoginTest'  className="text-warning ">Login</Link>
             }
         </li>
       </ul>

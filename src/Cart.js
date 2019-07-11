@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import firebase, {GAuth, auth} from './firebaseConfig';
 import Login from './LoginTest'
-
+import './App.css';
 
 class Cart extends Component {
     state = ({
@@ -61,8 +61,8 @@ class Cart extends Component {
                     </ul>
                 </div>
                     :
-                        <div>
-                           "Please login to access your cart"
+                        <div >
+                          <center><span className="texty">"Please login to access your cart"</span></center>
                         </div>
                 }
 

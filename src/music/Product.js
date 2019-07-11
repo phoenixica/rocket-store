@@ -56,7 +56,7 @@ export default class Product extends React.Component {
 
 
                     { this.props.image ?
-                        <button  className="btn btn-primary" ref="btn" onClick={this.handleSubmit}>Add to cart</button>
+                        <button  className="btn  btn-info" ref="btn" onClick={this.handleSubmit}>Add to cart</button>
                         :
                         <h3>Use the form above to lookup an album</h3>
                     }

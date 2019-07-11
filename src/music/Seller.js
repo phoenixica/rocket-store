@@ -136,7 +136,7 @@ export default class Seller extends React.Component {
       <div className="row">
       <button 
       type="button" 
-      className="btn btn-secondary btn-lg btn-block" 
+      className="btn  btn-lg btn-block btn-info" 
       onClick={this.showClick}>
         User Albums
         </button>
@@ -151,7 +151,7 @@ export default class Seller extends React.Component {
       <br /><br /> */}
       
       <div className="container">
-          <div className="row">
+          <div className="row ">
           {
               this.state.clicked ? "" : this.state.display.map((album,index) =>
                 <List 

@@ -1,7 +1,11 @@
-import React from 'react'
+// import React from 'react'
 import firebase from '../firebaseConfig'
+import React, { Component } from "react";
+// import { MDBNotification } from "mdbreact";
+// import Notif from './Notif';
+import './header.css';
 
-export default class List extends React.Component {
+export default class List extends Component {
 
     state = ({
         //addAlbum: '',
@@ -10,7 +14,9 @@ export default class List extends React.Component {
     });
 
     isAdded = () => {
-        alert('"'+this.props.name +'" is added to your cart');
+      
+        alert('"'+this.props.name +'" is added to your album list');
+   
     };
 
     handleSubmit = (event) => {
@@ -54,12 +60,12 @@ export default class List extends React.Component {
           <div className="card-body">
             <span>
               {
-                this.props.button ? '' : <button className="badge badge-secondary" ref="btn" onClick={this.handleSubmit}>Add to cart</button>
+                this.props.button ? '' : <button className="badge badge-info " ref="btn" onClick={this.handleSubmit}>Add to cart</button>
               }
               </span>
-              <h6>{this.props.name} </h6>
-              <p>{this.props.artist}</p>
-              <img src={this.props.image} alt="" className="card-img-top"/>
+              <h6 className="cartfonts">{this.props.name} </h6>
+              <p className="albumtitle">{this.props.artist}</p>
+              <img src={this.props.image} alt="" className="card-img-to "/>
             </div>
         </div>
        <br/>
