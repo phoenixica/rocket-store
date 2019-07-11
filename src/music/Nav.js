@@ -99,7 +99,8 @@ export default class Nav extends React.Component {
                     onChange={this.handleChange}
                     className="form-control"/>
                     <br />
-                <button type="submit" className="btn btn-secondary">
+                <button type="submit" className="btn btn-info btn-info">
+                  
                   Search Result
                 </button>
               </form>

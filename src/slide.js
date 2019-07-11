@@ -2,10 +2,13 @@ import React from 'react';
 // import { Slide } from 'react-slideshow-image';
 
 // import { Link, Route } from 'react-router-dom';
-import img1 from './images/img1.jpg';
-import img2 from './images/img2.jpg';
-import img3 from './images/img3.jpg';
-import img4 from './images/img4.jpeg';
+import img1 from './images/pawel-bukowski-QAZsV6GZo7g-unsplash.jpg';
+import img2 from './images/phillip-blocker-b9CcBwmq30c-unsplash.jpg';
+import img3 from './images/puk-khantho-sWbGwr1fOUk-unsplash.jpg';
+import img4 from './images/sergio-ruiz-WetGvQxnbYY-unsplash.jpg';
+import img5 from './images/austin-neill-SLUeuL-mrRg-unsplash.jpg';
+import img6 from './images/surya-urs-8YZe_V0Bn_o-unsplash.jpg';
+import img7 from './images/a-l-ya631mqQ7Ng-unsplash.jpg';
 // import img33 from './images/img33.jpg';
 // import img6 from './images/img6.jpg';
 
@@ -34,7 +37,15 @@ const Slideshow = () => {
                 <div className="carousel-item">
                     <img src={img4} className="d-block w-100" alt="..." />
                 </div>
-
+                <div className="carousel-item">
+                    <img src={img5} className="d-block w-100" alt="..." />
+                </div>
+                <div className="carousel-item">
+                    <img src={img6} className="d-block w-100" alt="..." />
+                </div>
+                <div className="carousel-item">
+                    <img src={img7} className="d-block w-100" alt="..." />
+                </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -46,9 +46,9 @@ class Login extends Component {
         return (
             <div className="container">
                 {this.props.user ?
-                    <button className="btn btn-secondary btn-lg btn-block"  onClick={this.logout}>Log Out</button>
+                    <button className="btn  btn-lg btn-block btn  btn-info"  onClick={this.logout}>Log Out</button>
                     :
-                    <button className="btn btn-secondary btn-lg btn-block" onClick={this.login}>Log in</button>
+                    <button className="btn btn  btn-info btn-lg btn-block" onClick={this.login}>Log in</button>
                 }
 
                 {this.props.user
@@ -62,7 +62,7 @@ class Login extends Component {
                     </div>
 
                     :
-                    <h2 style={{color: 'red'}}>Please login to access your cart </h2>
+                    <h2 style={{color: 'darkred'}}> <br/><center>Please login to access your cart</center> </h2>
                 }
             </div>
 

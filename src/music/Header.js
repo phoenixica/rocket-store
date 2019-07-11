@@ -25,8 +25,8 @@ render()
 {
 return (
 
-    <div>
-    <nav className="navbar navbar-expand-sm bg-light navbar-fixed-top fonts text-danger ">
+    <div > 
+    <nav className="navbar navbar-expand-sm bg-light navbar-fixed-top fonts text-danger colory "  >
       <ul className="navbar-nav text-danger">
         <li className="navbar-brand">
             <Link to='/'><img src={rocart} alt="Store" id='logo'/></Link>

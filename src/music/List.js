@@ -60,7 +60,7 @@ export default class List extends Component {
           <div className="card-body">
             <span>
               {
-                this.props.button ? '' : <button className="badge badge-secondary " ref="btn" onClick={this.handleSubmit}>Add to cart</button>
+                this.props.button ? '' : <button className="badge badge-info " ref="btn" onClick={this.handleSubmit}>Add to cart</button>
               }
               </span>
               <h6 className="cartfonts">{this.props.name} </h6>
